@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri=".2/sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZTS_SUBJOS_CDS_ENTITY_CDS" xml:lang="cs" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZTS_SUBJEKT_CDS_ENTITYType" sap:label="CDS subjekt entitty" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Idnsbj"/>
+                    <PropertyRef Name="Vrzsbj"/>
+                </Key>
+                <Property Name="Idnsbj" Type="Edm.Int32" Nullable="false" sap:label="Identifikace subj." sap:quickinfo="Identifikace subjektu"/>
+                <Property Name="Vrzsbj" Type="Edm.Int16" Nullable="false" sap:label="Verze subjektu" sap:quickinfo="Verze informace o subjektu"/>
+                <Property Name="Oidsbj" Type="Edm.Decimal" Precision="22" Scale="0" sap:label="OID subjektu"/>
+                <Property Name="Ridsbj" Type="Edm.Decimal" Precision="22" Scale="0" sap:label="RID subjektu"/>
+                <Property Name="Typsbj" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Typ subjektu"/>
+                <Property Name="Dtmpltod" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Platnost od"/>
+                <Property Name="Registro" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Registrovaný subjekt" sap:quickinfo="Subjekt je registrovaný v centrálních KE"/>
+                <Property Name="Deleted" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Subjekt je vymazán"/>
+                <Property Name="VerzeUuid" Type="Edm.Guid" sap:label="GUID subjektu"/>
+            </EntityType>
+            <EntityType Name="ZTS_SUBJOS_CDS_ENTITYType" sap:label="Nové CDS s entitou" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Idnsbj"/>
+                    <PropertyRef Name="Vrzsbj"/>
+                </Key>
+                <Property Name="Idnsbj" Type="Edm.Int32" Nullable="false" sap:label="Identifikace subj." sap:quickinfo="Identifikace subjektu"/>
+                <Property Name="Vrzsbj" Type="Edm.Int16" Nullable="false" sap:label="Verze subjektu" sap:quickinfo="Verze informace o subjektu"/>
+                <Property Name="Rdncsl" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Rodné číslo"/>
+                <Property Name="Jmnosb" Type="Edm.String" MaxLength="40" sap:required-in-filter="true" sap:label="Jméno osoby"/>
+                <Property Name="Prjosb" Type="Edm.String" MaxLength="40" sap:label="Příjmení osoby"/>
+                <Property Name="Rdnprj" Type="Edm.String" MaxLength="40" sap:label="Rodné příjmení"/>
+                <Property Name="Ttlpjm" Type="Edm.String" MaxLength="35" sap:label="Titul před jménem"/>
+                <Property Name="Ttlzjm" Type="Edm.String" MaxLength="50" sap:label="Titul za jménem"/>
+                <Property Name="Dtmnrz" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Datum narození osoby"/>
+                <Property Name="Dtmumr" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Datum úmrtí osoby"/>
+                <Property Name="Sttobc" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Státní občanství"/>
+                <Property Name="Phlavi" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Pohlaví osoby"/>
+                <Property Name="Sttradr" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Stát trvalé adresy"/>
+                <NavigationProperty Name="to_Subjekt" Relationship="ZTS_SUBJOS_CDS_ENTITY_CDS.assoc_B7555C72581C0E70709A0CC2848FFAF5" FromRole="FromRole_assoc_B7555C72581C0E70709A0CC2848FFAF5" ToRole="ToRole_assoc_B7555C72581C0E70709A0CC2848FFAF5"/>
+            </EntityType>
+            <Association Name="assoc_B7555C72581C0E70709A0CC2848FFAF5" sap:content-version="1">
+                <End Type="ZTS_SUBJOS_CDS_ENTITY_CDS.ZTS_SUBJOS_CDS_ENTITYType" Multiplicity="1" Role="FromRole_assoc_B7555C72581C0E70709A0CC2848FFAF5"/>
+                <End Type="ZTS_SUBJOS_CDS_ENTITY_CDS.ZTS_SUBJEKT_CDS_ENTITYType" Multiplicity="1" Role="ToRole_assoc_B7555C72581C0E70709A0CC2848FFAF5"/>
+            </Association>
+            <EntityContainer Name="ZTS_SUBJOS_CDS_ENTITY_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZTS_SUBJEKT_CDS_ENTITY" EntityType="ZTS_SUBJOS_CDS_ENTITY_CDS.ZTS_SUBJEKT_CDS_ENTITYType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="ZTS_SUBJOS_CDS_ENTITY" EntityType="ZTS_SUBJOS_CDS_ENTITY_CDS.ZTS_SUBJOS_CDS_ENTITYType" sap:requires-filter="true" sap:content-version="1"/>
+                <AssociationSet Name="assoc_B7555C72581C0E70709A0CC2848FFAF5" Association="ZTS_SUBJOS_CDS_ENTITY_CDS.assoc_B7555C72581C0E70709A0CC2848FFAF5" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZTS_SUBJOS_CDS_ENTITY" Role="FromRole_assoc_B7555C72581C0E70709A0CC2848FFAF5"/>
+                    <End EntitySet="ZTS_SUBJEKT_CDS_ENTITY" Role="ToRole_assoc_B7555C72581C0E70709A0CC2848FFAF5"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <Annotations Target="ZTS_SUBJOS_CDS_ENTITY_CDS.ZTS_SUBJOS_CDS_ENTITY_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="ZTS_SUBJOS_CDS_ENTITY_CDS.ZTS_SUBJOS_CDS_ENTITY_CDS_Entities/ZTS_SUBJOS_CDS_ENTITY" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="RequiresFilter" Bool="true"/>
+                        <PropertyValue Property="RequiredProperties">
+                            <Collection>
+                                <PropertyPath>Jmnosb</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_Subjekt"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="http://duz.ext.cssz.cz:8002/sap/opu/odata/sap/ZTS_SUBJOS_CDS_ENTITY_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://duz.ext.cssz.cz:8002/sap/opu/odata/sap/ZTS_SUBJOS_CDS_ENTITY_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
